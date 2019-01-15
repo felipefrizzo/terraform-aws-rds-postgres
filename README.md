@@ -2,6 +2,27 @@
 
 Terraform module to create an AWS RDS (Relational Database Server) PostgreSQL.
 
+## Requirements
+* An existing VPC.
+* An existing DB Subnet Group.
+* An existing Parameter Group for PostgreSQL.
+* An existing RDS Enhanced Monitoring role.
+
+### Password for Master Database
+* The module will generate a random 16 characteres long password.
+
+### Read Replica Database
+If replicate_source_db parameter is defined, it indicates that the instance is meant to be a read replica.
+
+These parameters will be inherited from the master's in the first creation stage:
+
+1. allocated_storage
+2. maintenance_window
+3. parameter_group_name
+3. vpc_security_group_ids
+
+To apply different values for the parameters above, you have to re-apply the configuration after the first creation is finished.
+
 ## Usage
 ```
 module "postgresql" {
