@@ -17,6 +17,7 @@ variable "product_domain" {
 variable "environment" {
   type        = "string"
   description = "The environment this RDS belongs to"
+  default     = "dev"
 }
 
 variable "description" {
