@@ -204,3 +204,16 @@ variable "alarm_cpu_credit_balance_threshold" {
   description = "Database CPU credit balance"
   default = "30"
 }
+
+variable alarm_actions {
+  type        = "list"
+  description = "The list of actions to execute when this alarm transitions into an ALARM state from any other state."
+}
+variable ok_actions {
+  type        = "list"
+  description = "The list of actions to execute when this alarm transitions into an OK state from any other state."
+}
+variable insufficient_data_actions {
+  type        = "list"
+  description = "The list of actions to execute when this alarm transitions into an INSUFFICIENT_DATA state from any other state."
+}

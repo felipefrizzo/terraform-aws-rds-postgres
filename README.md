@@ -97,3 +97,6 @@ module "postgresql" {
 | alarm_free_disk_threshold | Database server free storage space (5GB) | string | `5000000000` | no |
 | alarm_free_memory_threshold | Database server freeable memory (128MB) | string | `128000000` | no |
 | alarm_cpu_credit_balance_threshold | Database CPU credit balance | string | `30` | no |
+| alarm_actions | The list of actions to execute when this alarm transitions into an ALARM state from any other state. | list | `<list>` | yes |
+| ok_actions | The list of actions to execute when this alarm transitions into an OK state from any other state. | list | `<list>` | yes |
+| insufficient_data_actions | The list of actions to execute when this alarm transitions into an INSUFFICIENT_DATA state from any other state. | list | `<list>` | yes |
